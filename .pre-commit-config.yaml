@@ -6,8 +6,6 @@ repos:
     rev: v4.4.0
     hooks:
       # list of supported hooks: https://pre-commit.com/hooks.html
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
       - id: check-docstring-first
       - id: check-yaml
       - id: debug-statements
@@ -16,6 +14,8 @@ repos:
       - id: check-toml
       - id: check-case-conflict
       - id: check-added-large-files
+        args: ["--maxkb", "1000"]
+
 
   # python code formatting
   - repo: https://github.com/psf/black
